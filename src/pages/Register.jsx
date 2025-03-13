@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 
 
 const Register = () => {
-    const { signInWithGoogle } = useContext(AuthContext)
+    const { signInWithGoogle, createUser } = useContext(AuthContext)
     const handleGoogleSignIn = async () => {
         try {
             let user = await signInWithGoogle();
@@ -14,14 +14,20 @@ const Register = () => {
             console.error("Google Sign-in failed: ", error)
         }
     }
-
-
     const {
         register,
         handleSubmit,
     } = useForm()
 
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = async (data) => {
+        try {
+            const { email, password } = data;
+            let user = await createUser(email, password);
+            console.log("created user: ", user)
+        } catch (error) {
+            console.error("Error while creating user: ", error);
+        }
+    }
 
     return (
         <div className="text-center">

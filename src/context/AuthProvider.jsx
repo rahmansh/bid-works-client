@@ -31,7 +31,6 @@ const AuthProvider = ({ children }) => {
             const result = await signInWithPopup(auth, googleProvider)
             setUser(result.user)
             setLoading(false)
-
         } catch (error) {
             console.error("Google Sign In Error: ", error)
             setLoading(false)
@@ -42,7 +41,10 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         try {
             const result = await createUserWithEmailAndPassword(auth, email, password);
-            console.log(result)
+            setUser(result.user)
+            setLoading(false)
+            return result.user;
+
         } catch (error) {
             console.error("Error in creating user with user and email ", error)
             setLoading(false)
