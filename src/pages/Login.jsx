@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { useForm } from "react-hook-form"
 
 
 const Login = () => {
@@ -14,20 +15,28 @@ const Login = () => {
         }
     }
 
+    const {
+        register,
+        handleSubmit,
+    } = useForm()
+
+    const onSubmit = (data) => console.log(data)
+
     return (
         <div className="text-center">
             <div className="hero bg-base-200 min-h-screen">
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <div className="card-body">
-                        <fieldset className="fieldset">
-                            <label className="fieldset-label">Email</label>
-                            <input type="email" className="input" placeholder="Email" />
-                            <label className="fieldset-label">Password</label>
-                            <input type="password" className="input" placeholder="Password" />
-                            <button className="btn btn-neutral mt-4">Login</button>
-                        </fieldset>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <fieldset className="fieldset">
+                                <label className="fieldset-label">Email</label>
+                                <input {...register("email")} type="email" className="input" placeholder="Email" />
+                                <label className="fieldset-label">Password</label>
+                                <input {...register("password")} type="password" className="input" placeholder="Password" />
+                                <button className="btn btn-neutral mt-4">Login</button>
+                            </fieldset>
+                        </form>
                         <button className="btn btn-neutral" onClick={handleGoogleSignIn}>Google</button>
-
                     </div>
                 </div>
             </div>
