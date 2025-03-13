@@ -1,4 +1,4 @@
-import { getAuth, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import app from "../services/firebase.config";
 import { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
@@ -38,6 +38,17 @@ const AuthProvider = ({ children }) => {
         }
     }
 
+    const createUser = async (email, password) => {
+        setLoading(true)
+        try {
+            const result = await createUserWithEmailAndPassword(auth, email, password);
+            console.log(result)
+        } catch (error) {
+            console.error("Error in creating user with user and email ", error)
+            setLoading(false)
+        }
+    }
+
 
 
 
@@ -47,7 +58,7 @@ const AuthProvider = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ user, loading, logOut, signInWithGoogle }}>
+        <AuthContext.Provider value={{ user, loading, logOut, signInWithGoogle, createUser }}>
             {children}
         </AuthContext.Provider>
     );
