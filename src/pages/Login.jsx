@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useForm } from "react-hook-form"
+import toast from 'react-hot-toast';
+
 
 
 const Login = () => {
@@ -25,7 +27,10 @@ const Login = () => {
         try {
             const { email, password } = data;
             let result = await signInUserWithEmailAndPassword(email, password)
-            console.log("Sign In user: ", result)
+
+            if (result) {
+                toast('Signed in successfully! ');
+            }
 
         } catch (error) {
             console.error("Error: ", error)

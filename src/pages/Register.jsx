@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useForm } from "react-hook-form"
+import toast from 'react-hot-toast';
+
 
 
 const Register = () => {
@@ -23,7 +25,9 @@ const Register = () => {
         try {
             const { email, password } = data;
             let user = await createUser(email, password);
-            console.log("created user: ", user)
+            if (user) {
+                toast('Register successfully! ');
+            }
         } catch (error) {
             console.error("Error while creating user: ", error);
         }
