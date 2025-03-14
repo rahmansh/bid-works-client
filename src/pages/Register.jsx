@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useForm } from "react-hook-form"
 import toast from 'react-hot-toast';
+import { Link } from "react-router";
 
 
 
@@ -48,7 +49,7 @@ const Register = () => {
                             </fieldset>
                         </form>
                         <button className="btn btn-neutral" onClick={handleGoogleSignIn}>Google</button>
-
+                        <div className="mt-4"><Link to="/login" className="link link-hover">Already User? Login</Link></div>
                     </div>
                 </div>
             </div>
