@@ -30,6 +30,7 @@ const Login = () => {
             let result = await signInUserWithEmailAndPassword(email, password)
 
             if (result) {
+                // TODO: Redirect user after successful login
                 toast('Signed in successfully! ');
             }
 
