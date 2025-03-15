@@ -35,9 +35,9 @@ const Register = () => {
     }
 
     return (
-        <div className="text-center">
-            <div className="hero bg-base-200 min-h-screen">
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="text-center m-2">
+            <div className="hero bg-[#F4F1E8] min-h-screen">
+                <div className="card w-full max-w-sm shrink-0 shadow-2xl">
                     <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <fieldset className="fieldset">
