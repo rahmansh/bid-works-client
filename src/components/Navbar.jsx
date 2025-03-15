@@ -6,12 +6,12 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
 
     const links = <>
-        <li><a>Home</a></li>
+        <li><Link to={"/"}>Home</Link></li>
         <li><a>Jobs</a></li>
     </>
 
     return (
-        <div className="bg-base-100 shadow-sm">
+        <div className="bg-[#F8F8F8] shadow-sm">
             <div className="max-w-screen-2xl mx-auto">
                 <div className="navbar">
                     <div className="navbar-start">
@@ -25,7 +25,7 @@ const Navbar = () => {
                                 {links}
                             </ul>
                         </div>
-                        <a className="btn btn-ghost text-xl">BidWork</a>
+                        <Link to={"/"} className="btn btn-ghost text-xl">BidWork</Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
