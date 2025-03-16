@@ -36,7 +36,7 @@ const Categories = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {/* Rendering 6 cards by default */}
                 {categoryData.slice(0, visibleCount).map((category, index) => (
-                    <div key={index} className="card w-96 bg-[#F4F1E8] bg-opacity-70 backdrop-blur-lg shadow-lg rounded-lg mx-auto">
+                    <div key={index} className="card w-90 bg-[#F4F1E8] bg-opacity-70 backdrop-blur-lg shadow-lg rounded-lg mx-auto">
                         <div className="card-body">
                             <div className="flex justify-between items-center">
                                 <div className="avatar avatar-placeholder">
