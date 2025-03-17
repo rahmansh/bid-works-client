@@ -27,7 +27,7 @@ const Categories = () => {
 
 
     return (
-        <div className="py-12 md:py-1 mt-14 md:mt-10 mb-10 px-4 sm:px-6">
+        <div className="py-12 md:py-1 mt-14 md:mt-10 px-4 sm:px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-black md:mb-4">
                 Popular Categories
             </h2>
