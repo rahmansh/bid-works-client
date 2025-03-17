@@ -27,16 +27,16 @@ const Categories = () => {
 
 
     return (
-        <div className="py-12 md:py-1 mt-14 md:mt-10 mb-10">
+        <div className="py-12 md:py-1 mt-14 md:mt-10 mb-10 px-4 sm:px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-black md:mb-4">
                 Popular Categories
             </h2>
             <p className="text-center mb-10">Find and hire professionals across all skills</p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid w-full grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {/* Rendering 6 cards by default */}
                 {categoryData.slice(0, visibleCount).map((category, index) => (
-                    <div key={index} className="card w-90 bg-[#F4F1E8] bg-opacity-70 backdrop-blur-lg shadow-lg rounded-lg mx-auto">
+                    <div key={index} className="card w-full bg-[#F4F1E8] bg-opacity-70 backdrop-blur-lg shadow-lg rounded-lg mx-auto">
                         <div className="card-body">
                             <div className="flex justify-between items-center">
                                 <div className="avatar avatar-placeholder">
