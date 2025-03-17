@@ -12,7 +12,7 @@ const Navbar = () => {
 
     return (
         <div className="bg-[#F4F1E8] shadow-sm">
-            <div className="max-w-screen-2xl mx-auto">
+            <div className="max-w-6xl mx-auto">
                 <div className="navbar">
                     <div className="navbar-start">
                         <div className="dropdown">
@@ -25,7 +25,7 @@ const Navbar = () => {
                                 {links}
                             </ul>
                         </div>
-                        <Link to={"/"} className="btn btn-ghost text-xl font-extrabold">BidWork</Link>
+                        <Link to={"/"} className="btn btn-ghost text-3xl font-extrabold">BidWork</Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1 font-semibold">
