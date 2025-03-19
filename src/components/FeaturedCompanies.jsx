@@ -6,9 +6,9 @@ import { HiUserGroup } from "react-icons/hi2";
 const FeaturedCompanies = () => {
     return (
         <div className="max-w-6xl mx-auto mt-[80px] px-2 mb-4">
-            <div className="">
+            <div className="text-center">
                 <h2 className="text-3xl font-bold mb-3">Featured companies actively hiring</h2>
-                <div className="flex justify-between">
+                <div className="">
                     <p className="">Over 10000 Jobs</p>
                     <a href="#" className="underline">View All Companies</a>
                 </div>
